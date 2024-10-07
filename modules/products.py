@@ -11,7 +11,7 @@ class Product:
                  stock_quantity: int, 
                  product_form: str,
                  product_warehouse_id: int,
-                 volume: typing.Optional[int] = None):  # Make volume optional here
+                 volume: typing.Optional[int] = None):  
         
         self.product_id = self._generate_product_id()
         self.name = name
@@ -22,7 +22,7 @@ class Product:
         self.stock_quantity = stock_quantity
         self.product_form = product_form
         self.product_warehouse_id = product_warehouse_id
-        self.volume = volume  # Initialize volume directly here
+        self.volume = volume  
 
         self._add_to_json()
         self._opacity_control()
