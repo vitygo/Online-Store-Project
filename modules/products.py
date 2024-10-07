@@ -31,9 +31,9 @@ class Product:
         with open("data/warehouses.json", "r") as file:
             warehouse_data = json.load(file)
         for warehouse in warehouse_data:
-            if warehouse["warehouse_id"] == self.product_warehouse_id:
-                if warehouse["warehouse_opacity"] >= self.stock_quantity:
-                    warehouse["warehouse_opacity"] -= self.stock_quantity
+            if warehouse["id"] == self.product_warehouse_id:
+                if warehouse["copacity"] >= self.stock_quantity:
+                    warehouse["copacity"] -= self.stock_quantity
                 else:
                     print("Not enough space!")
                 break
