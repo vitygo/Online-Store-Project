@@ -1,50 +1,38 @@
 [
     {
-        "id_product": 999999,
-        "name": "Blue de Chanel Eau de Parfum",
-        "description": "A fresh and sensual fragrance for the modern man.",
-        "category": "fragrances",
-        "price": 150.0,
-        "warehouse_id": 50001
+        "product_id": 3033454,
+        "name": "dfs",
+        "category": null,
+        "brand": "fdsg",
+        "price": 213.0,
+        "description": "adsfgd",
+        "stock_quantity": 23,
+        "product_form": "dsfg",
+        "product_warehouse_id": 2324,
+        "volume": null
     },
     {
-        "id_product": 123712,
-        "name": "Creed Aventus",
-        "description": "A premium fragrance celebrating strength, power, and success.",
-        "category": "fragrances",
-        "price": 320.0,
-        "warehouse_id": 50001
+        "product_id": 3000657,
+        "name": "dsfgh",
+        "category": null,
+        "brand": "fdgdg",
+        "price": 324.0,
+        "description": "gdhffj",
+        "stock_quantity": 23,
+        "product_form": "dfgh",
+        "product_warehouse_id": 2324,
+        "volume": null
     },
     {
-        "id_product": 212341,
-        "name": "Dior Sauvage Eau de Toilette",
-        "description": "Inspired by wide-open spaces, a bold and fresh scent for men.",
-        "category": "fragrances",
-        "price": 120.0,
-        "warehouse_id": 50001
-    },
-    {
-        "id_product": 2127631,
-        "name": "Yves Saint Laurent Black Opium",
-        "description": "A seductive and spicy perfume for women, with a blend of coffee and vanilla.",
-        "category": "fragrances",
-        "price": 110.0,
-        "warehouse_id": 50001
-    },
-    {
-        "id_product": 2124531,
-        "name": "Chanel No. 5",
-        "description": "A timeless, classic fragrance for women with floral and aldehyde notes.",
-        "category": "fragrances",
-        "price": 200.0,
-        "warehouse_id": 50001
-    },
-    {
-        "id_product": 21544231,
-        "name": "Tom Ford Tobacco Vanille",
-        "description": "A luxurious unisex fragrance blending warm tobacco and sweet vanilla.",
-        "category": "fragrances",
-        "price": 270.0,
-        "warehouse_id": 50001
+        "product_id": 2594779,
+        "name": "dfsgdhf",
+        "category": null,
+        "brand": "fsdgdhf",
+        "price": 34.0,
+        "description": "fdsgh",
+        "stock_quantity": 22,
+        "product_form": "fgdhf",
+        "product_warehouse_id": 2324,
+        "volume": null
     }
 ]

@@ -1,5 +1,6 @@
 from modules.warehouses import Warehouse
 from modules.products import Product
+from modules.clients import Client
 import json
 
 def main():
@@ -7,7 +8,7 @@ def main():
                        f"(2)as admin\n"
                     )
     if user_input == "1":
-        ...
+        user_autoristation()
     elif user_input == "2":
         if admin_autoristion():
             admin_menu()
@@ -70,11 +71,39 @@ def admin_menu():
         
 
 
+def user_autoristation():
+    user_input = input(f"(1)sign up\n"
+                       f"(2)log in\n"
+                    )
+    
+    if user_input == "1":
+        client = Client.add_client()
+        print("sucssesful registration!")
+        client_menu(client)
+    elif user_input == "2":
+        ...
+           
+    
+def client_menu(client):
+    while True:
+        user_input = input(f"(1)Search by category\n"
+                        f"(2)Search by name\n"
+                        f"(3)Show cart\n"
+                        f"(4)Show purchase history\n"
+                        f"Enter your choice: ")
 
+        if user_input == "1":
+            ...
+        elif user_input == "2":
+            ...
+        elif user_input == "3":
+            ...
+        elif user_input == "4":
+            ...
 
             
 
                 
 
-
-main()
+if __name__ == "__main__":
+    main()

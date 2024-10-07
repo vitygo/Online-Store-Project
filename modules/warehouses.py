@@ -1,84 +1,45 @@
-import json
+import random 
+import json 
 
 class Warehouse:
-    def __init__(self, id_number:int, name:str, capacity:int) -> None:
-        self.id_number = id_number
-        self.name = name
-        self.capacity = capacity
-
-        #автоматичне додавання нового складу в базу данних
-        with open("data/warehouses.json", "r") as file:
-            warehouse_data = json.load(file)
+    def __init__(self, 
+                 warehouse_name:str,
+                 warehouse_opacity:int
+                 ):
         
-        cheker = False
-        for warehouse in warehouse_data:
-            if warehouse["id"] == self.id_number:
-                cheker = True
+        self.warehouse_id = self.__genarete_warehouse_id()
+        self.warehouse_name = warehouse_name
+        self.warehouse_opacity = warehouse_opacity
+         
+        self.__add_to_json()
+    
+    @classmethod
+    def add_warehouse(cls):
+        warehouse_name = input("enter warehouse name: ")
+        warehouse_opacity = int(input("enter warehouse opacity: "))
+        cls(warehouse_name, warehouse_opacity)
 
-        if not cheker:
-            warehouse_data.append({"id": self.id_number, 
-                            "name": self.name, 
-                            "copacity": self.capacity})
+    def search_product(self):
+        ...
+    def add_to_cart(self):
+        ...
+    def search_product_by_category(self):
+        ...
+
+    def __genarete_warehouse_id(self):
+        genarated_id = random.randint(1000, 5000)
+        return genarated_id
+    
+    def __add_to_json(self):
+         with open("data/warehouses.json", "r") as file:
+            warehouse_data = json.load(file)
+
+            warehouse = {"warehouse_id": self.warehouse_id,
+                      "warehouse_name": self.warehouse_name,
+                      "warehouse_opacity": self.warehouse_opacity,
+                      }
             
-            with open("data/warehouses.json", "w") as file:
-                json.dump(warehouse_data, file, indent=4)
-       
-
-
-    def __str__(self) -> str:
-        return (f"Werehouse id: {self.id_number}\n"
-               f"Werehouse name: {self.name}\n"
-               f"Werehouse capacity: {self.capacity} units\n"
-               f"Werehouse products amount: {...}\n")
-               
-
-    def add_warehouse(): #реєстрація створення нового складу
-        id_name = int(input("id: "))
-        name = input("name: ")
-        copacity = int(input("місткість: "))
-        Warehouse(id_name, name, copacity)
-
-    @staticmethod
-    def product_amount():
-        while True:
-            try:
-                user_input = int(input('Enter warehouse id: '))
-            except:
-                print('wrong id')
-            else:
-                with open("data/product.json", "r") as file:
-                    product_data = json.load(file)
-                cnt = 0
-                for product in product_data:  
-                    if product["warehouse_id"] == user_input:
-                        cnt += 1
-                    return 
-                
-    @staticmethod
-    def show_products_amount():
-        curent_warehouse = Warehouse.take_warehouse()
-        with open('data/product.json', 'r') as file:
-            product_data = json.load(file)
-        cnt = 0
-        for product in product_data:
-            if product['warehouse_id'] == curent_warehouse.id_number:
-                cnt += 1
-        print(f"In warehouse id:{curent_warehouse.id_number} {cnt} products")
-                
-
-    @staticmethod
-    def take_warehouse():
-        while True:
-            warehouse_id = int(input("enter warehouse id: "))
-
-            with open("data/warehouses.json", "r") as file:
-                warehouses = json.load(file)
-                for warehouse in warehouses:
-                    if warehouse['id'] == warehouse_id:
-                        w_id = warehouse["id"]
-                        w_name = warehouse['name']
-                        w_copacity = warehouse['copacity']
-                        curent_warehouse = Warehouse(w_id, w_name, w_copacity)
-                        return curent_warehouse
-                else:
-                    print("warehouse not found")
+            warehouse_data.append(warehouse)
+        
+         with open("data/warehouses.json", "w") as file:
+            json.dump(warehouse_data, file, indent=4)
