@@ -54,6 +54,22 @@ class Client:
         genarated_id = random.randint(100000, 500000)
         return genarated_id
     
+    @staticmethod
+    def log_in():
+        with open("data/clients.json", 'r') as file:
+            client_data = json.load(file)
+
+        client_email = input("enter your email: ")
+        for client in client_data:
+            if client["email"] == client_email:
+                client_password = input("enter password: ")
+                if client["password"] == client_password:
+                    return True
+                else:
+                    print("Wrong password!")
+            else:
+                print("wrong email!")
+        
 
     
 

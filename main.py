@@ -81,10 +81,11 @@ def user_autoristation():
         print("sucssesful registration!")
         client_menu(client)
     elif user_input == "2":
-        ...
+        if Client.log_in():
+            client_menu()
            
     
-def client_menu(client):
+def client_menu(client_id):
     while True:
         user_input = input(f"(1)Search by category\n"
                         f"(2)Search by name\n"
